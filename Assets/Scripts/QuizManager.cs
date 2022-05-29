@@ -104,12 +104,15 @@ public class QuizManager : MonoBehaviour
         if (Random.Range(0,trueCount+1) > Random.Range(0,falseCount+1))
         {
             winLosePanel.SetActive(true);
-            winLosePanel.GetComponentInChildren<Text>().text = "Bölümü geçtiniz";
+            
+            winLosePanel.GetComponentInChildren<Text>().text = "Organ tamamlandı";
+            winLosePanel.GetComponent<Image>().color = Color.green;
         }
         else
         {
             winLosePanel.SetActive(true);
-            winLosePanel.GetComponentInChildren<Text>().text = "Yenildiniz"; 
+            winLosePanel.GetComponent<Image>().color = Color.red;
+            winLosePanel.GetComponentInChildren<Text>().text = "Organ mutasyona uğradı"; 
         }
         
     }
